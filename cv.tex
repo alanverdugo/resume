@@ -1,0 +1,46 @@
+% !TEX TS-program = luatex
+% Awesome Source CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/darwiin/awesome-neue-latex-cv
+%
+% Author:
+% Christophe Roger
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+\documentclass[localFont,alternative]{yaac-another-awesome-cv}
+
+\name{Alan}{Verdugo}
+\photo{2.6cm}{me.png}
+\tagline{Software developer | Aspiring Data engineer}
+\socialinfo{
+    \email{factorpolar@protonmail.com}
+    \linkedin{alanverdugo}\\
+    \github{alanverdugo}
+    %\infos{kippel.net/blog}
+    \blog{kippel.net/blog}\\
+    \cvpdf{kippel.net/CV.pdf}
+    %\smartphone{+687 123 456}
+    %\address{2 Rue du quartier, 98765 Ville, Pays}\\
+}
+%------------------------------------------
+\begin{document}
+
+    \makecvheader
+
+    %--------------------SECTIONS-----------------------------------
+    \input{section_headline}
+    \input{section_competences}                 % Section competence
+    \input{section_experience_short}            % Section experience
+    \input{section_certifications}              % Section certifications
+    \input{section_languages}                   % Section languages
+    \input{section_projects}                    % Section projects
+    \input{section_schooling}                   % Section schooling
+    %\input{section_interests}                   % Section interests
+    \newpage
+    \input{section_volunteer}        % Section volunteer experience
+    \input{section_references}                  % Section references
+
+\end{document}
