@@ -48,7 +48,7 @@
 
 % Dependences
 %A Few Useful Packages
-\RequirePackage[frenchb]{babel}
+%\RequirePackage[frenchb]{babel}
 \RequirePackage[utf8]{luainputenc}
 \RequirePackage{fontspec} 					                 % for loading fonts
 \RequirePackage{url,parskip} 	    % other packages for formatting
@@ -104,6 +104,7 @@
 
 % Setup Array : new column type
 \newcolumntype{R}[1]{>{\hfill}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright}m{#1}}
 
 %Italian hyphenation for the word: ''corporations''
 \hyphenation{im-pre-se}
@@ -311,9 +312,6 @@
 
 % -------- BEGIN Certifications -----------------------------------------------
 
-% Define a new column type for the certifications environment
-\newcolumntype{Y}{>{\raggedleft}p{\leftcolumn}}
-
 % Define the 'certifications' environment
 \newenvironment{certifications}{%
   \begin{tabular}{Y p{\rightcolumnlength}}
@@ -332,7 +330,8 @@
 
 % Define the 'skills' environment
 \newenvironment{skills}{%
-  \begin{longtable}{R{\leftcolumn}p{\rightcolumnlength}}
+  %\begin{longtable}{R{\leftcolumn}p{\rightcolumnlength}}
+  \begin{longtable}{L{\leftcolumn}p{\rightcolumnlength}}
 }{%
   \end{longtable}
 }
@@ -340,7 +339,7 @@
 % Render a skill in the skills environment
 % Usage: \skill{<skill>}{<level>}
 \newcommand\skill[2]{
-  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircleThin}{\faCircle}}\enspace } \\
+  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircleThin}{\faCircle}} } \\
 }
 
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
@@ -388,7 +387,9 @@
                  & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
   }
 
+
 \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
+
 
 \newcommand*\twocolumnsection[2]{
   \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
@@ -397,6 +398,21 @@
   \hfill
   \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
     #2
+  \end{minipage}
+  }
+
+
+\newcommand*\threecolumnsection[3]{
+  \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
+    #1
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
+    #2
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
+    #3
   \end{minipage}
   }
 
