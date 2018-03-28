@@ -128,12 +128,34 @@
     ItalicFont = SourceSansPro-LightIt]
 }
 
-%New length definition
+%New length definitions
 \newlength{\rightcolumnlength}
 \setlength{\rightcolumnlength}{14.8cm}
 
 \newlength{\leftcolumn}
 \setlength{\leftcolumn}{2.5cm}
+
+
+\newlength{\rightSkillcolumnlength}
+\setlength{\rightSkillcolumnlength}{14.8cm}
+
+\newlength{\leftSkillcolumnlength}
+\setlength{\leftSkillcolumnlength}{1.5cm}
+
+
+\newlength{\rightCourseworkcolumnlength}
+\setlength{\rightCourseworkcolumnlength}{10.0cm}
+
+\newlength{\leftCourseworkColumn}
+\setlength{\leftCourseworkColumn}{7.3cm}
+
+
+\newlength{\leftCertificationsColumnlength}
+\setlength{\leftCertificationsColumnlength}{7.0cm}
+
+\newlength{\rightCertificationscolumnlength}
+\setlength{\rightCertificationscolumnlength}{9.0cm}
+
 
 % Font Awesome icons aliases
 \newcommand{\mailSymbol}{\faAt}
@@ -146,7 +168,7 @@
 \newcommand{\mobileSymbol}{\faMobilePhone}
 \newcommand{\githubSymbol}{\faGithub}
 
-\newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{Black} }
+\newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{Blue} }
 \newcommand\important[1]{\textbf #1}
 
 % Create a tag
@@ -157,7 +179,7 @@
 
 % Render author's name
 % Usage: \user{<firstanme>}{<lastname>}
-\newcommand\user[2]{\color{accentcolor}{\LARGE #1 \textsc{\textbf{#2}}}\color{Black}}
+\newcommand\user[2]{\color{accentcolor}{\LARGE \textbf{#1} \textsc{\textbf{#2}}}\color{Black}}
 
 % Render a text with its symbol
 % Usage; \socialtext{<icon>}{<label>}
@@ -271,7 +293,7 @@
         \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
       \end{minipage}
     }{}
-    \bigskip
+    \smallskip
   }
 }
 
@@ -282,41 +304,45 @@
 \newenvironment{keywords}{%
   \renewcommand{\arraystretch}{1.1}
 
-  \begin{tabular}{>{}r>{}p{13cm}} 
+  \begin{tabular}{>{}r>{}p{14cm}} 
 }{%
   \end{tabular}
 }
 
-% Render a scholarshipentry in the scolarship environment
-% Usage: \scholarshipentry{<date>}{<description>}
+% Render a courseworkentry in the scolarship environment
+% Usage: \courseworkentry{<date>}{<description>}
 \newcommand\keywordsentry[2]{
   \textbf{#1} &   #2\\ 
 }
 
-% Define a new column type for the scholarship environment
-\newcolumntype{Y}{>{\raggedleft}p{\leftcolumn}}
+% Define a new column type for the coursework environment
+\newcolumntype{Y}{>{\raggedleft}p{\leftCourseworkColumn}}
 
-% Define the 'scholarship' environment
-\newenvironment{scholarship}{%
+% Define the 'coursework' environment
+\newenvironment{coursework}{%
   \begin{tabular}{Y p{\rightcolumnlength}}
 }{%
   \end{tabular}
 }
 
-% Render a scholarshipentry in the scolarship environment
-% Usage: \scholarshipentry{<date>}{<description>}
-\newcommand\scholarshipentry[2]{
-  #1    &  #2 \\
+% Render a courseworkentry in the scolarship environment
+% Usage: \courseworkentry{<date>}{<description>}
+\newcommand\courseworkentry[2]{
+  \textbf{#1}    &  \emph{#2} \\
 }
 
 
 % -------- BEGIN Certifications -----------------------------------------------
 
+% Define a new column type for the coursework environment
+\newcolumntype{W}{>{\raggedleft}p{\leftCertificationsColumnlength}}
+
 % Define the 'certifications' environment
 \newenvironment{certifications}{%
-  \begin{tabular}{Y p{\rightcolumnlength}}
+  \begin{tabular}{W p{\rightCertificationscolumnlength}}
 }{%
   \end{tabular}
+  \bigskip
 }
 
 % Render a certificationsentry in the certifications environment
@@ -331,7 +357,7 @@
 % Define the 'skills' environment
 \newenvironment{skills}{%
   %\begin{longtable}{R{\leftcolumn}p{\rightcolumnlength}}
-  \begin{longtable}{L{\leftcolumn}p{\rightcolumnlength}}
+  \begin{longtable}{L{\leftSkillcolumnlength}p{\rightSkillcolumnlength}}
 }{%
   \end{longtable}
 }
