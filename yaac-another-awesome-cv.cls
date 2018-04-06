@@ -151,10 +151,10 @@
 
 
 \newlength{\leftCertificationsColumnlength}
-\setlength{\leftCertificationsColumnlength}{7.0cm}
+\setlength{\leftCertificationsColumnlength}{6.0cm}
 
 \newlength{\rightCertificationscolumnlength}
-\setlength{\rightCertificationscolumnlength}{9.0cm}
+\setlength{\rightCertificationscolumnlength}{10.0cm}
 
 
 % Font Awesome icons aliases
@@ -218,15 +218,16 @@
 
 % Render author's blog
 % Usage: \blog{<blog>}
-\newcommand*{\blog}[1]{\sociallink{\blogSymbol}{http://www.#1}{#1}}
+\newcommand*{\blog}[1]{\sociallink{\blogSymbol}{http://www.#1}{\underline{#1}}}
 
 % Render author's PDF CV
 % Usage: \cvpdf{<cvpdf>}
-\newcommand*{\cvpdf}[1]{\sociallink{\cvpdfSymbol}{http://www.#1}{#1}}
+\newcommand*{\cvpdf}[1]{\sociallink{\cvpdfSymbol}{http://www.#1}{\underline{#1}}}
 
 % Render author's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1}{linkedin.com/in/#1}}
+\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}
+  {http://www.linkedin.com/in/#1}{\underline{linkedin.com/in/#1}}}
 
 % Render author's viadeo(optional)
 % Usage: \viadeo{<viadeo-nick>}
@@ -234,11 +235,12 @@
 
 % Render author's github (optional)
 % Usage: \github{<github-nick>}
-\newcommand*{\github}[1]{\sociallink{\githubSymbol}{https://www.github.com/#1}{github.com/#1}}           % Github icon + URL
+\newcommand*{\github}[1]{\sociallink{\githubSymbol}
+  {https://www.github.com/#1}{\underline{github.com/#1}}}
 
 % Render author's email (optional)
 % Usage: \email{<email adress>}
-\newcommand*{\email}[1]{\sociallink{\mailSymbol}{mailto:#1}{#1}}
+\newcommand*{\email}[1]{\sociallink{\mailSymbol}{mailto:#1}{\underline{#1}}}
 
 % Render author's mobile phone (optional)
 % Usage: \smartphone{<mobile phone number>}
@@ -334,13 +336,13 @@
 
 % -------- BEGIN Certifications -----------------------------------------------
 
-% Define a new column type for the coursework environment
+% Define a new column type for the certification environment
 \newcolumntype{W}{>{\raggedleft}p{\leftCertificationsColumnlength}}
 
 % Define the 'certifications' environment
 \newenvironment{certifications}{%
   \begin{tabular}{W p{\rightCertificationscolumnlength}}
-}{%
+}{
   \end{tabular}
   \bigskip
 }
