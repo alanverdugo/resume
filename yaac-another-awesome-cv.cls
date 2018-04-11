@@ -22,26 +22,27 @@
 \LoadClass[a4paper]{article}
 
 \DeclareOption{green}{
-  \def\@green{green}
+    \def\@green{green}
 }
 
 \DeclareOption{red}{
-  \def\@red{red}
+    \def\@red{red}
 }
 
 \DeclareOption{indigo}{
-  \def\@indigo{indigo}
+    \def\@indigo{indigo}
 }
+
 \DeclareOption{orange}{
-  \def\@orange{orange}
+    \def\@orange{orange}
 }
 
 \DeclareOption{localFont}{
-  \def\@local{local}
+    \def\@local{local}
 }
 
 \DeclareOption{alternative}{
-  \def\@alternative{alternate}
+    \def\@alternative{alternate}
 }
 
 \ProcessOptions
@@ -70,17 +71,33 @@
 % Define default accent colors
 \definecolor{basecolor}{HTML}{000066}       %BLUE
 
-\ifundef{\@green} {
-  \ifundef{\@red} {
-    \ifundef{\@indigo}{
-      \ifundef{\@orange} {}
-      { \definecolor{basecolor}{HTML}{e68a00} }
+\ifundef{\@green}
+    {
+        \ifundef{\@red}
+        {
+            \ifundef{\@indigo}
+            {
+                \ifundef{\@orange} {}
+                {
+                    \definecolor{basecolor}
+                        {HTML}
+                        {e68a00}
+                }
+            }
+            {
+                \definecolor{basecolor}
+                    {rgb}
+                    {0.2, 0.07, 0.48}
+            }
+        }
+        {
+            \definecolor{basecolor}{HTML}{b30000}
+        }     %RED
     }
-    { \definecolor{basecolor}{rgb}{0.2, 0.07, 0.48} }
-  }
-  { \definecolor{basecolor}{HTML}{b30000} }     %RED
+
+{
+    \definecolor{basecolor}{rgb}{0.0, 0.62, 0.38}
 }
-{ \definecolor{basecolor}{rgb}{0.0, 0.62, 0.38} }
 
 \definecolor{darkGrey}{HTML}{989898}
 
@@ -116,16 +133,16 @@
 % Define font to use according to localFont option
 \ifundef{\@local}
 {
-  %\setmainfont[BoldFont = Helvetica Neue, ItalicFont=Helvetica Neue Thin Italic ,SmallCapsFont = Helvetica Neue Light]{Helvetica Neue Thin}
-  \setmainfont{Source Sans Pro Light}[
-    BoldFont = SourceSansPro-Regular, 
-    ItalicFont= Source Sans Pro Light Italic]
+    %\setmainfont[BoldFont = Helvetica Neue, ItalicFont=Helvetica Neue Thin Italic ,SmallCapsFont = Helvetica Neue Light]{Helvetica Neue Thin}
+    \setmainfont{Source Sans Pro Light}[
+        BoldFont = SourceSansPro-Regular, 
+        ItalicFont= Source Sans Pro Light Italic]
 }
 {
-  \setmainfont{SourceSansPro-Light}[
-    Path = fonts/, 
-    BoldFont = SourceSansPro-Regular, 
-    ItalicFont = SourceSansPro-LightIt]
+    \setmainfont{SourceSansPro-Light}[
+        Path = fonts/, 
+        BoldFont = SourceSansPro-Regular, 
+        ItalicFont = SourceSansPro-LightIt]
 }
 
 %New length definitions
@@ -174,7 +191,7 @@
 % Create a tag
 % Usage: \cvtag{<tag label>}
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
+    \tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
 }
 
 % Render author's name
@@ -227,16 +244,24 @@
 % Render author's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}
-  {http://www.linkedin.com/in/#1}{\underline{linkedin.com/in/#1}}}
+    {http://www.linkedin.com/in/#1}{\underline{linkedin.com/in/#1}}}
 
 % Render author's viadeo(optional)
 % Usage: \viadeo{<viadeo-nick>}
-\newcommand*{\viadeo}[1]{\sociallink{\viadeoSymbol}{http://www.viadeo.com/fr/profile/#1}{viadeo.com/fr/profile/#1}} 
+\newcommand*{
+        \viadeo
+    }
+    [1]
+    {
+        \sociallink{\viadeoSymbol}
+            {http://www.viadeo.com/fr/profile/#1}
+            {viadeo.com/fr/profile/#1}
+    } 
 
 % Render author's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\sociallink{\githubSymbol}
-  {https://www.github.com/#1}{\underline{github.com/#1}}}
+    {https://www.github.com/#1}{\underline{github.com/#1}}}
 
 % Render author's email (optional)
 % Usage: \email{<email adress>}
@@ -248,14 +273,15 @@
 
 % Render author's tagline
 \newcommand\resumetitle[1]{
-  \ifundef{\@alternative}{
-	 \par{
-	 	 \bigskip\center{\Large \color{accentcolor}\textbf{#1}\color{Black}}\par
-	 }
-	 \bigskip
-  }{
-    \color{accentcolor}\textbf{\large{#1}}\color{black}
-  }
+    \ifundef{\@alternative}{
+	   \par{
+	       \bigskip\center{\Large \color{accentcolor}\textbf{#1}\color{Black}}\par
+	}
+	\bigskip
+    }
+    {
+        \color{accentcolor}\textbf{\large{#1}}\color{black}
+    }
 }
 
 % Define social entries to print in header
@@ -304,34 +330,35 @@
 
 % Define the 'keywords' environment
 \newenvironment{keywords}{%
-  \renewcommand{\arraystretch}{1.1}
-
-  \begin{tabular}{>{}r>{}p{14cm}} 
-}{%
-  \end{tabular}
-}
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{>{}r>{}p{14cm}} 
+    }{%
+        \end{tabular}
+    }
 
 % Render a courseworkentry in the scolarship environment
 % Usage: \courseworkentry{<date>}{<description>}
 \newcommand\keywordsentry[2]{
-  \textbf{#1} &   #2\\ 
-}
+        \textbf{#1} &   #2\\ 
+    }
 
 % Define a new column type for the coursework environment
 \newcolumntype{Y}{>{\raggedleft}p{\leftCourseworkColumn}}
+\newcolumntype{Z}{>{\raggedright}p{\rightCourseworkcolumnlength}}
 
 % Define the 'coursework' environment
 \newenvironment{coursework}{%
-  \begin{tabular}{Y p{\rightcolumnlength}}
-}{%
-  \end{tabular}
-}
+    \begin{tabular}
+        {Y p{\rightcolumnlength}}
+    }{%
+        \end{tabular}
+    }
 
 % Render a courseworkentry in the scolarship environment
 % Usage: \courseworkentry{<date>}{<description>}
 \newcommand\courseworkentry[2]{
-  \textbf{#1}    &  \emph{#2} \\
-}
+        \textbf{#1}    &  \emph{#2} \\
+    }
 
 
 % -------- BEGIN Certifications -----------------------------------------------
@@ -340,12 +367,14 @@
 \newcolumntype{W}{>{\raggedleft}p{\leftCertificationsColumnlength}}
 
 % Define the 'certifications' environment
-\newenvironment{certifications}{%
-  \begin{tabular}{W p{\rightCertificationscolumnlength}}
-}{
-  \end{tabular}
-  \bigskip
-}
+\newenvironment{certifications}
+    {
+        \begin{tabular}{W p{\rightCertificationscolumnlength}}
+    }
+    {
+        \end{tabular}
+        \bigskip
+    }
 
 % Render a certificationsentry in the certifications environment
 % Usage: \certificationsentry{<date>}{<description>}
@@ -357,18 +386,20 @@
 
 
 % Define the 'skills' environment
-\newenvironment{skills}{%
-  %\begin{longtable}{R{\leftcolumn}p{\rightcolumnlength}}
-  \begin{longtable}{L{\leftSkillcolumnlength}p{\rightSkillcolumnlength}}
-}{%
-  \end{longtable}
-}
+\newenvironment{skills}
+    {    
+        %\begin{longtable}{R{\leftcolumn}p{\rightcolumnlength}}
+        \begin{longtable}{L{\leftSkillcolumnlength}p{\rightSkillcolumnlength}}
+    }
+    {
+        \end{longtable}
+    }
 
 % Render a skill in the skills environment
 % Usage: \skill{<skill>}{<level>}
 \newcommand\skill[2]{
-  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircleThin}{\faCircle}} } \\
-}
+        \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircleThin}{\faCircle}} } \\
+    }
 
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
 
@@ -450,11 +481,13 @@
 % -------- BEGIN PROJECTS -------------------------------------------------
 
 % Define the 'projects' environment
-\newenvironment{projects}{%
-  \begin{longtable}{R{\leftcolumn}|E}
-}{%
-  \end{longtable}
-}
+\newenvironment{projects}
+    {
+        \begin{longtable}{R{\leftcolumn}|E}
+    }
+    {
+        \end{longtable}
+    }
 
 % Render an project in the projects environment
 % Usage: 
@@ -478,11 +511,13 @@
 % -------- BEGIN VOLUNTEER-----------------------------------------------
 
 % Define the 'volunteer' environment
-\newenvironment{volunteers}{%
-  \begin{longtable}{R{\leftcolumn}|E}
-}{%
-  \end{longtable}
-}
+\newenvironment{volunteers}
+    {
+        \begin{longtable}{R{\leftcolumn}|E}
+    }
+    {
+        \end{longtable}
+    }
 
 % Render an volunteer activiry in the volunteer environment
 % Usage: 
@@ -504,16 +539,18 @@
 
 
 % Define the 'referencees' environment
-\newenvironment{referees}{%
-}{%
-  \hfill
-  \bigskip
-}
+\newenvironment{referees}
+    {
+    }
+    {
+        \hfill
+        \bigskip
+    }
 
-\newcommand*\referee[4]{
-  \hfill\\
-  \hspace{1em}
-      \textbf{#1} - \emph{#2}, \textsc{#3}\\
-      \faQuoteLeft \ \ \emph{#4} \faQuoteRight\\
-}
-
+\newcommand*\referee[4]
+    {
+        \hfill\\
+        \hspace{1em}
+        \textbf{#1} - \emph{#2}, \textsc{#3}\\
+        \faQuoteLeft \ \ \emph{#4} \faQuoteRight\\
+    }
