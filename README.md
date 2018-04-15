@@ -2,6 +2,8 @@
 
 These are the files needed to create my own resume using LaTeX.
 
+To compile run: lualatex cv.tex
+
 I based all this in Christophe Roger's beautiful template: https://github.com/darwiin/yaac-another-awesome-cv
 
 Which in turn is based in a template by Alessandro Plasmati.

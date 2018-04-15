@@ -13,18 +13,19 @@
 \documentclass[localFont,alternative]{yaac-another-awesome-cv}
 
 \name{Alan}{Verdugo}
-\photo{1.6cm}{me.png}
+%\photo{1.6cm}{me.png}
 \tagline{Software engineer}
 \socialinfo{
     \email{factorpolar@protonmail.com}
     \linkedin{alanverdugo}
-    \github{alanverdugo}\\
+    \github{alanverdugo}
     %\infos{kippel.net/blog}
-    \blog{kippel.net/blog}
-    \cvpdf{kippel.net/CV.pdf}
+    %\blog{kippel.net/blog}
+    %\cvpdf{kippel.net/CV.pdf}
     %\smartphone{+687 123 456}
     \address{Guadalajara, Mexico}\\
 }
+
 %------------------------------------------
 \begin{document}
 
@@ -32,16 +33,36 @@
 
     %--------------------SECTIONS-----------------------------------
     %\input{section_headline}
-    \input{section_competences}                 % Section competence
-    \input{section_experience_short}            % Section experience
-    \input{section_certifications}              % Section certifications
-    \input{section_languages}                   % Section languages
+
+    % Section competence
+    \input{section_competences}
+
+    % Section experience
+    \input{section_experience_short}
+
+    % Section certifications
+    \input{section_certifications}
+
+    % Section languages, interests and strengths
+    %\input{section_languages}
+
+    % Section coursework
+    \input{section_coursework}
+
     \newpage
-    \input{section_projects}                    % Section projects
-    \input{section_coursework}                   % Section coursework
-    %\input{section_interests}                   % Section interests
+
+    % Section projects
+    \input{section_projects}
+
+    % Section interests
+    %\input{section_interests}
+
     %\newpage
-    %\input{section_volunteer}        % Section volunteer experience
-    %\input{section_references}                  % Section references
+
+    % Section volunteer experience
+    %\input{section_volunteer}
+
+    % Section references
+    %\input{section_references}
 
 \end{document}

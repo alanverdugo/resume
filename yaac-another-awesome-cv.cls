@@ -171,7 +171,7 @@
 \setlength{\leftCertificationsColumnlength}{6.0cm}
 
 \newlength{\rightCertificationscolumnlength}
-\setlength{\rightCertificationscolumnlength}{10.0cm}
+\setlength{\rightCertificationscolumnlength}{12.0cm}
 
 
 % Font Awesome icons aliases
