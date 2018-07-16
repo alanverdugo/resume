@@ -33,6 +33,6 @@ Feel free to edit the code and send pull requests. I can also be reached by GitH
 
 This project is licensed under the MIT License - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Acknowledgments
+## Acknowledgements
 
 * This project was based in Christophe Roger's template (https://github.com/darwiin/yaac-another-awesome-cv), which in turn is based in a template created by Alessandro Plasmati.
