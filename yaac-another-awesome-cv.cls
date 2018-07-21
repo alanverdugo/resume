@@ -538,6 +538,7 @@
 % -------- END VOLUNTEER-----------------------------------------------
 
 
+% -------- BEGIN REFERENCES-----------------------------------------------
 % Define the 'referencees' environment
 \newenvironment{referees}
     {
@@ -553,4 +554,25 @@
         \hspace{1em}
         \textbf{#1} - \emph{#2}, \textsc{#3}\\
         \faQuoteLeft \ \ \emph{#4} \faQuoteRight\\
+}
+
+% -------- END REFERENCES-----------------------------------------------
+
+% -------- BEGIN PUBLICATIONS-----------------------------------------------
+% Define the 'referencees' environment
+\newenvironment{publications}
+    {
     }
+    {
+        \hfill
+        \bigskip
+    }
+
+\newcommand*\publication[2]
+    {
+        \hfill\\
+        \hspace{1em}
+        \textbf{#1} \\
+        \emph{\underline{\href{#2}{#2}}}\\
+    }
+% -------- END PUBLICATIONS-----------------------------------------------
