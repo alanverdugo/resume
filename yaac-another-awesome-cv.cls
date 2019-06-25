@@ -148,28 +148,26 @@
 %New length definitions
 \newlength{\rightcolumnlength}
 \setlength{\rightcolumnlength}{14.8cm}
-
 \newlength{\leftcolumn}
 \setlength{\leftcolumn}{2.5cm}
 
-
 \newlength{\rightSkillcolumnlength}
 \setlength{\rightSkillcolumnlength}{14.8cm}
-
 \newlength{\leftSkillcolumnlength}
 \setlength{\leftSkillcolumnlength}{1.5cm}
 
+\newlength{\rightScholarshipcolumnlength}
+\setlength{\rightScholarshipcolumnlength}{14.0cm}
+\newlength{\leftScholarshipColumn}
+\setlength{\leftScholarshipColumn}{1.1cm}
 
 \newlength{\rightCourseworkcolumnlength}
 \setlength{\rightCourseworkcolumnlength}{10.0cm}
-
 \newlength{\leftCourseworkColumn}
 \setlength{\leftCourseworkColumn}{7.3cm}
 
-
 \newlength{\leftCertificationsColumnlength}
 \setlength{\leftCertificationsColumnlength}{6.0cm}
-
 \newlength{\rightCertificationscolumnlength}
 \setlength{\rightCertificationscolumnlength}{12.0cm}
 
@@ -196,7 +194,7 @@
 
 % Render author's name
 % Usage: \user{<firstanme>}{<lastname>}
-\newcommand\user[2]{\color{accentcolor}{\LARGE \textbf{#1} \textsc{\textbf{#2}}}\color{Black}}
+\newcommand\user[2]{\color{accentcolor}{\LARGE \textsc{\textbf{#1}} \textsc{\textbf{#2}}}\color{Black}}
 
 % Render a text with its symbol
 % Usage; \socialtext{<icon>}{<label>}
@@ -336,6 +334,7 @@
         \end{tabular}
     }
 
+% -------- BEGIN COURSEWORK -------------------------------------------------
 % Render a courseworkentry in the scolarship environment
 % Usage: \courseworkentry{<date>}{<description>}
 \newcommand\keywordsentry[2]{
@@ -359,6 +358,7 @@
 \newcommand\courseworkentry[2]{
         \textbf{#1}    &  \emph{#2} \\
     }
+% -------- END COURSEWORK -------------------------------------------------
 
 
 % -------- BEGIN Certifications -----------------------------------------------
@@ -385,6 +385,7 @@
 % -------- END Certifications -------------------------------------------------
 
 
+% -------- BEGIN SKILLS -------------------------------------------------
 % Define the 'skills' environment
 \newenvironment{skills}
     {    
@@ -402,6 +403,27 @@
     }
 
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
+% -------- END SKILLS -------------------------------------------------
+
+
+% -------- BEGIN SCHOLARSHIP -------------------------------------------------
+% Define a new column type for the scholarship environment
+\newcolumntype{V}{>{\raggedleft}p{\leftcolumn}}
+
+% Define the 'scholarship' environment
+\newenvironment{scholarship}{%
+  \begin{tabular}{V p{\rightScholarshipcolumnlength}}
+}{%
+  \end{tabular}
+}
+
+% Render a scholarshipentry in the scolarship environment
+% Usage: \scholarshipentry{<date>}{<description>}
+\newcommand\scholarshipentry[2]{
+  \textbf{#1}    &  #2 \\
+}
+% -------- END SCHOLARSHIP -------------------------------------------------
+
 
 % -------- BEGIN EXPERIENCE -------------------------------------------------
 
@@ -459,7 +481,6 @@
     #2
   \end{minipage}
   }
-
 
 \newcommand*\threecolumnsection[3]{
   \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
@@ -557,6 +578,7 @@
 }
 
 % -------- END REFERENCES-----------------------------------------------
+
 
 % -------- BEGIN PUBLICATIONS-----------------------------------------------
 % Define the 'referencees' environment
