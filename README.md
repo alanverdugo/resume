@@ -12,11 +12,16 @@ You can read more about this small project in my blog: http://www.kippel.net/blo
 
 Building resumes require LaTeX to be installed in your system. LaTeX is a document preparation system used for the communication and publication of scientific documents. LaTeX is free software and is distributed under the LaTeX Project Public License. For installation, please refer to: https://www.latex-project.org/get/
 
+Install requirements:
+```
+sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-xetex texlive-pictures texlive-lang-french lmodern fonts-font-awesome
+```
+
 ### Installation and deployment
 
 Simply clone this repository to your sistem and compile using any LaTeX editor. For example:
 ```
-lualatex cv.tex
+latexmk -cd -f -lualatex -interaction=nonstopmode -synctex=1 cv.tex
 ```
 
 This will create a file named cv.pdf, located in the same directory.
