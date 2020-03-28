@@ -1,5 +1,6 @@
-.DS_Store
-.aux
-.log
-.out
+# Generated files.
+*.DS_Store
+*.aux
+*.log
+*.out
 
