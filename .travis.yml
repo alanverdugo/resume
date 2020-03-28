@@ -1,0 +1,16 @@
+language: minimal
+before_install:
+  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk texlive-fonts-extra texlive-fonts-recommended texlive-latex-base
+  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-xetex
+  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-pictures texlive-lang-french lmodern fonts-font-awesome
+script:
+  - latexmk -cd -f -lualatex -interaction=nonstopmode -synctex=1 cv.tex
+  - ls -larth
+deploy:
+  provider: pages
+  skip_cleanup: true
+  # Set in the settings page of your repository, as a secure variable
+  github_token: $token
+  keep_history: true
+  #on:
+  #  branch: master

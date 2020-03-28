@@ -1,0 +1,99 @@
+Alan Verdugo
+
+
+
+================================================================================
+
+
+
+SKILLS -------------------------------------------------------------------------
+
+- Linux Administration: Automation Resource management Configuration 
+- Data Analytics: Pandas Matplotlib Scikit-learn Jupyter notebooks 
+- Programming: Python Bash shell scripting API integration (JSON, XML) Database integration (SQL, NoSQL) Version Control Systems (Git, SVN) Documentation creation and maintenance 
+
+EMPLOYMENT ---------------------------------------------------------------------
+
+Software developer, IBM (2014-06 — Present)
+Single-handedly collecting, processing, curating and reporting the entirety of billing data for IBM's Development Support Team (https://dst.ibm.com). Through enhancing existing code and developing new programs, our small team was able to automate and improve the processes and increase the internal revenue of the organization in the order of thousands of dollars every month. I also participated actively in the innovation office projects in order to explore new areas of development, documenting insights and presenting demonstrations of results.
+- Used IBM Watson's Natural Language Processing, Speech-to-text and Text-to-speech APIs to configure Pepper and Nao humanoid robots in the Cognitive Concierge Project in order to enable them to understand and answer questions from the conference attendees.
+- RFID tracking with analytics project: Built a proof of concept of an internal solution for the registration of attendees in IBM conferences while also providing mobile applications and a RFID tracking system used to identify the attendees' participation during the event. Then, used that data to gain insights and displayed a dashboard using the Watson Analytics platform. This would replace the current outsourced solution while also adding value using only internal resources and tools. Accomplishments: A proof of concept that would replace the outsourced solution was completed in under two months, and a fully-working live demo was shown during the IBM Interconnect 2017 conference in Las Vegas.
+
+UNIX/AIX Specialist, IBM (2013-04 — 2014-06)
+Supporting, troubleshooting, installing, configuring, migrating and developing all kinds of software and servers. Specialized in the Unix platform and its variants (Linux, AIX, etc.)
+
+Software Engineer, Electronic Arts (2012-09 — 2013-04)
+Launching, supporting, troubleshooting, enhancing and decommissioning thousands of servers and applications in the cloud used for videogame traffic and data processing for millions of concurrent users. Specialized in the social aspects of the Origin© client, (EA's PC game distribution platform) including chat, friends lists, game achievements, avatars and notifications.
+
+Programmer Analyst, AutoZone (2007-11 — 2012-09)
+Troubleshooting, debugging, maintaining, developing and enhancing systems in a wide variety of programming languages and operating systems.
+- Received three recognition awards due to my efforts (refer to the 'Awards' section below).
+
+
+
+
+EDUCATION ----------------------------------------------------------------------
+
+Wizeline (2017-06 — 2017-06)
+
+mongodb.com (2017-01 — 2017-02)
+
+IBM (2017-01 — 2017-01)
+
+Linux Professional Institute (2016-01 — 2016-09)
+
+Comptia (2016-01 — 2016-09)
+
+IBM (2015-12 — 2015-12)
+
+Stanford/Coursera (2015-09 — 2015-11)
+
+IBM (2015-11 — 2015-11)
+
+Rice University/Coursera (2014-09 — 2014-11)
+
+UTCH (??? — 2010-08)
+
+
+
+
+WRITING ------------------------------------------------------------------------
+
+Building a Hadoop cluster with Raspberry Pi (2016-03)
+Installing, configuring and testing a distributed storage and processing cluster with single-board computers.
+
+Installing and configuring a Hadoop cluster (2016-01)
+Building a simple 4-node Hadoop cluster as an introduction to Hadoop's configuration.
+
+Introduction to Apache Hadoop (2016-01)
+Introduction to the Hadoop's high-level architecture and environment.
+
+
+
+SERVICE ------------------------------------------------------------------------
+
+World Community Grid (2014-09 — Present)
+Contributed over 15,000 CPU-hours to help solve the world's biggest problems in health and sustainability, like finding cures and treatments for Cancer, Ebola, Zika, AIDS, Tuberculosis and others.
+- Awarded the Emerald Badge (1 year of uninterrupted contribution) for Mapping Cancer Markers.
+
+
+RECOGNITION --------------------------------------------------------------------
+
+Extra miller, AutoZone (Jan 2011)
+This Extra Miller was awarded to me for recovering the lost data from a database that was mistakenly deleted by somebody else.
+
+WITTDTJR (What It Takes To Do The Job Right), AutoZone (Jan 2010)
+For delivering an outstanding service.
+
+WITTDTJR (What It Takes To Do The Job Right), AutoZone (Jan 2009)
+For delivering an outstanding service.
+
+
+
+INTERESTS ----------------------------------------------------------------------
+
+FREE AND OPEN SOURCE SOFTWARE: GNU Linux GPL 
+
+LITERATURE: Popular science Science fiction Pretty much anything else 
+
+
