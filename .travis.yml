@@ -5,12 +5,10 @@ stages:
 jobs:
   include:
     - stage: install
-      name: "Latex installation"
+      name: "Latex installation and build"
       script:
           - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk texlive-fonts-extra texlive-fonts-recommended texlive-latex-base
           - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-xetex
           - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-pictures texlive-lang-french lmodern fonts-font-awesome
-    - stage: build
-      name: "Build PDF"
-      script:
           - latexmk -cd -f -lualatex -interaction=nonstopmode -synctex=1 cv.tex
+          - ls -larth
