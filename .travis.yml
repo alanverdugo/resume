@@ -12,5 +12,5 @@ deploy:
   # Set in the settings page of your repository, as a secure variable
   github_token: $token
   keep_history: true
-  on:
-    branch: master
+  #on:
+  #  branch: master
