@@ -7,8 +7,16 @@ script:
   - latexmk -cd -f -lualatex -interaction=nonstopmode -synctex=1 cv.tex
   - ls -larth
 deploy:
+  # Deploy to gh-pages
   provider: pages
   skip_cleanup: true
   # Set in the settings page of your repository, as a secure variable
   github_token: $ghtoken
   keep_history: true
+deploy:
+  # Also deploy the built files into the master branch.
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $ghtoken  # Your GitHub token set in Travis CI console
+  target_branch: master        # Add this line - To push into GitHub master branch
