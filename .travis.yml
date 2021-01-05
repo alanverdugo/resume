@@ -10,5 +10,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   # Set in the settings page of your repository, as a secure variable
-  github_token: $token
+  #github_token: $token
+  gh-token: $token
   keep_history: true
