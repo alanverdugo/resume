@@ -13,11 +13,15 @@ deploy:
   # Set in the settings page of your repository, as a secure variable
   github_token: $ghtoken
   keep_history: true
+  target_branch: gh-pages
+  on:
+      branch: development
 deploy:
   # Also deploy the built files into the master branch (from development).
   provider: pages
   skip_cleanup: true
   keep_history: true
+  # Set in the settings page of your repository, as a secure variable
   github_token: $ghtoken
   target_branch: master
   on:
