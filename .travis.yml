@@ -1,11 +1,11 @@
 language: minimal
 before_install:
-  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk texlive-fonts-extra texlive-fonts-recommended texlive-latex-base
-  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-xetex
-  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-pictures texlive-lang-french lmodern fonts-font-awesome
+  - sudo apt-get -qq update 
+  - sudo apt-get install -y --no-install-recommends latexmk texlive-fonts-extra texlive-fonts-recommended texlive-latex-base
+  - sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-xetex
+  - sudo apt-get install -y --no-install-recommends texlive-pictures texlive-lang-french lmodern fonts-font-awesome
 script:
   - latexmk -cd -f -lualatex -interaction=nonstopmode -synctex=1 cv.tex
-  - ls -larth
 deploy:
   # Deploy to gh-pages
   provider: pages
@@ -22,4 +22,3 @@ deploy:
   target_branch: master
   on:
       branch: development
-
