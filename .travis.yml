@@ -7,12 +7,21 @@ before_install:
 script:
   - latexmk -cd -f -lualatex -interaction=nonstopmode -synctex=1 cv.tex
 deploy:
-  # Deploy to gh-pages
-  provider: pages
-  skip_cleanup: true
-  # Set in the settings page of your repository, as a secure variable
-  github_token: $ghtoken
-  keep_history: true
-  target_branch: gh-pages
-  on:
-      branch: development
+  # Also deploy the built files into the master branch (from development).
+  - provider: pages
+    skip_cleanup: true
+    keep_history: true
+    # Set in the settings page of your repository, as a secure variable
+    github_token: $ghtoken
+    target_branch: master
+    on:
+        branch: development
+    # Deploy to gh-pages
+  - provider: pages
+    skip_cleanup: true
+    # Set in the settings page of your repository, as a secure variable
+    github_token: $ghtoken
+    keep_history: true
+    target_branch: gh-pages
+    on:
+        branch: development
