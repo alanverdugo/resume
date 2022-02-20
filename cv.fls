@@ -261,7 +261,7 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/luatex/luaotfload/luaotfload-blacklist.cnf
 INPUT /etc/fonts/fonts.conf
-INPUT /etc/fonts/conf.d/69-language-selector-zh-cn.conf
+INPUT /etc/fonts/conf.d/65-nonlatin.conf
 OUTPUT /home/travis/.texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.lua
 OUTPUT /home/travis/.texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc
 OUTPUT /home/travis/.texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.lua
@@ -330,8 +330,6 @@ INPUT /home/travis/.texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache
 OUTPUT /home/travis/.texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc
 INPUT /home/travis/build/alanverdugo/resume/section_certifications.tex
 INPUT /home/travis/build/alanverdugo/resume/section_certifications.tex
-INPUT /home/travis/build/alanverdugo/resume/section_languages.tex
-INPUT /home/travis/build/alanverdugo/resume/section_languages.tex
 INPUT /home/travis/build/alanverdugo/resume/section_coursework.tex
 INPUT /home/travis/build/alanverdugo/resume/section_coursework.tex
 INPUT /home/travis/build/alanverdugo/resume/section_projects.tex
