@@ -1,0 +1,19 @@
+name: Build LaTeX document and deploy to github pages
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: build-cv
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: cv.tex
+          compiler: lualatex
+          args: -interaction=nonstopmode -shell-escape
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: . # The folder the action should deploy.
