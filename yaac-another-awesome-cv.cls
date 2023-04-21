@@ -407,6 +407,8 @@
 
 
 % -------- BEGIN SCHOLARSHIP -------------------------------------------------
+
+
 % Define a new column type for the scholarship environment
 \newcolumntype{V}{>{\raggedleft}p{\leftcolumn}}
 
@@ -417,11 +419,30 @@
   \end{tabular}
 }
 
-% Render a scholarshipentry in the scolarship environment
-% Usage: \scholarshipentry{<date>}{<description>}
-\newcommand\scholarshipentry[2]{
-  \textbf{#1}    &  #2 \\
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Render a scholarshipentry in the scolarship environment
+%% Usage: \scholarshipentry{<date>}{<description>}
+%\newcommand\scholarshipentry[2]{
+%  \textbf{#1}    &  #2 \\
+%}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Render an experience in the experiences environment
+% Usage: 
+% \experience
+%  {<Grade>}        {<School>}
+%                    {
+%                      <Notes>
+%                    }
+
+\newcommand\scholarshipentry[3]{
+  \textbf{#1}    & \textbf{#2}                      \\*
+                 & \begin{minipage}[t]{\rightcolumnlength}
+  					         #3
+                   \end{minipage}                   \\*
+  }
+
 % -------- END SCHOLARSHIP -------------------------------------------------
 
 
@@ -598,3 +619,24 @@
         \emph{\underline{\href{#2}{#2}}}\\
     }
 % -------- END PUBLICATIONS-----------------------------------------------
+
+
+% -------- BEGIN PATENTS-----------------------------------------------
+% Define the 'patents' environment
+\newenvironment{patents}
+    {
+    }
+    {
+        \hfill
+        \bigskip
+    }
+
+\newcommand*\patent[2]
+    {
+        \hfill\\
+        \hspace{1em}
+        \textbf{#1} \\
+        #2
+    %    \emph{\underline{\href{#2}{#2}}}\\
+    }
+% -------- END PATENTS-----------------------------------------------
