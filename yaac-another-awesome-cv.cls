@@ -114,10 +114,10 @@
 
 % Setup CV sections
 \titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{2pt}{2pt}
+\titlespacing{\section}{0pt}{1pt}{1pt}
 
 % Configure list
-\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em} 
+\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=1em} 
 
 % Setup Array : new column type
 \newcolumntype{R}[1]{>{\hfill}m{#1}}
@@ -167,7 +167,7 @@
 \setlength{\leftCourseworkColumn}{7.3cm}
 
 \newlength{\leftCertificationsColumnlength}
-\setlength{\leftCertificationsColumnlength}{6.0cm}
+\setlength{\leftCertificationsColumnlength}{2.5cm}
 \newlength{\rightCertificationscolumnlength}
 \setlength{\rightCertificationscolumnlength}{12.0cm}
 
@@ -373,7 +373,7 @@
     }
     {
         \end{tabular}
-        \bigskip
+        %\bigskip
     }
 
 % Render a certificationsentry in the certifications environment
@@ -407,6 +407,8 @@
 
 
 % -------- BEGIN SCHOLARSHIP -------------------------------------------------
+
+
 % Define a new column type for the scholarship environment
 \newcolumntype{V}{>{\raggedleft}p{\leftcolumn}}
 
@@ -417,11 +419,30 @@
   \end{tabular}
 }
 
-% Render a scholarshipentry in the scolarship environment
-% Usage: \scholarshipentry{<date>}{<description>}
-\newcommand\scholarshipentry[2]{
-  \textbf{#1}    &  #2 \\
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Render a scholarshipentry in the scolarship environment
+%% Usage: \scholarshipentry{<date>}{<description>}
+%\newcommand\scholarshipentry[2]{
+%  \textbf{#1}    &  #2 \\
+%}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Render an experience in the experiences environment
+% Usage: 
+% \experience
+%  {<Grade>}        {<School>}
+%                    {
+%                      <Notes>
+%                    }
+
+\newcommand\scholarshipentry[3]{
+  \textbf{#1}    & \textbf{#2}                      \\*
+                 & \begin{minipage}[t]{\rightcolumnlength}
+  					         #3
+                   \end{minipage}                   \\*
+  }
+
 % -------- END SCHOLARSHIP -------------------------------------------------
 
 
@@ -581,20 +602,42 @@
 
 
 % -------- BEGIN PUBLICATIONS-----------------------------------------------
-% Define the 'referencees' environment
+% Define the 'publications' environment
 \newenvironment{publications}
     {
     }
     {
         \hfill
-        \bigskip
+        %\bigskip
     }
 
 \newcommand*\publication[2]
     {
         \hfill\\
         \hspace{1em}
-        \textbf{#1} \\
-        \emph{\underline{\href{#2}{#2}}}\\
+        %\textbf{#1} \\
+        %\emph{\underline{\href{#2}{#2}}}\\
+        \textbf{\underline{\href{#1}{#2}}} \\
     }
 % -------- END PUBLICATIONS-----------------------------------------------
+
+
+% -------- BEGIN PATENTS-----------------------------------------------
+% Define the 'patents' environment
+\newenvironment{patents}
+    {
+    }
+    {
+        \hfill
+        %\bigskip
+    }
+
+\newcommand*\patent[2]
+    {
+        \hfill\\
+        \hspace{1em}
+        \textbf{#1} \\
+        #2
+    %    \emph{\underline{\href{#2}{#2}}}\\
+    }
+% -------- END PATENTS-----------------------------------------------
