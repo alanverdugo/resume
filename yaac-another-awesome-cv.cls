@@ -114,10 +114,10 @@
 
 % Setup CV sections
 \titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{2pt}{2pt}
+\titlespacing{\section}{0pt}{1pt}{1pt}
 
 % Configure list
-\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em} 
+\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=1em} 
 
 % Setup Array : new column type
 \newcolumntype{R}[1]{>{\hfill}m{#1}}
@@ -167,7 +167,7 @@
 \setlength{\leftCourseworkColumn}{7.3cm}
 
 \newlength{\leftCertificationsColumnlength}
-\setlength{\leftCertificationsColumnlength}{6.0cm}
+\setlength{\leftCertificationsColumnlength}{2.5cm}
 \newlength{\rightCertificationscolumnlength}
 \setlength{\rightCertificationscolumnlength}{12.0cm}
 
@@ -373,7 +373,7 @@
     }
     {
         \end{tabular}
-        \bigskip
+        %\bigskip
     }
 
 % Render a certificationsentry in the certifications environment
@@ -602,21 +602,22 @@
 
 
 % -------- BEGIN PUBLICATIONS-----------------------------------------------
-% Define the 'referencees' environment
+% Define the 'publications' environment
 \newenvironment{publications}
     {
     }
     {
         \hfill
-        \bigskip
+        %\bigskip
     }
 
 \newcommand*\publication[2]
     {
         \hfill\\
         \hspace{1em}
-        \textbf{#1} \\
-        \emph{\underline{\href{#2}{#2}}}\\
+        %\textbf{#1} \\
+        %\emph{\underline{\href{#2}{#2}}}\\
+        \textbf{\underline{\href{#1}{#2}}} \\
     }
 % -------- END PUBLICATIONS-----------------------------------------------
 
@@ -628,7 +629,7 @@
     }
     {
         \hfill
-        \bigskip
+        %\bigskip
     }
 
 \newcommand*\patent[2]
